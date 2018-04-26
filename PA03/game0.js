@@ -261,7 +261,7 @@ BUGS:
 
 	function addBouncingEnemyBall() {
 			enemyBall = createBouncingEnemyBall();
-			enemyBall.position.set(randN(100)-50,75,randN(100)-50);
+			enemyBall.position.set(randN(100)-50,35,randN(100)-50);
 			scene.add(enemyBall);
 			balls.push(enemyBall);
 	}
@@ -603,6 +603,7 @@ BUGS:
 					}
 					addBouncingEnemyBall();
 				}
+				break;
 			}
 		}
 		);
