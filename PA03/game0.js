@@ -87,7 +87,7 @@ BUGS:
 	function createLoseScene() {
 		loseScene = initScene();
 		var geometry = new THREE.PlaneGeometry( 1000, 1000, 0 );
-		var texture = new THREE.TextureLoader().load( '../images/youLose.jpeg' );
+		var texture = new THREE.TextureLoader().load( '../images/loser.png' );
 		texture.wrapS = THREE.RepeatWrapping;
 		texture.wrapT = THREE.RepeatWrapping;
 		texture.repeat.set( 1, 1 );
@@ -215,7 +215,8 @@ BUGS:
 						this.__dirtyPosition = true;
 						gameState.scene = 'lifelost';
 						if (gameState.lives == 0){
-							gameState.scene = 'youlose';
+							gameState.scene = '
+							';
 						}
 					}
 				}
@@ -795,6 +796,9 @@ BUGS:
 	    		scene.simulate();
 				if (gameState.camera!= 'none'){
 					renderer.render( scene, gameState.camera );
+				}
+				if(gameState.lives<=0){
+					gameState.scene = 'youlose';
 				}
 				updateBouncingEnemyBall();
 				break;
